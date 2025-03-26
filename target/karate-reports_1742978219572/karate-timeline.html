@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Karate\/Demo\/Test[1:3]","start":1742978069136,"end":1742978069521,"title":"Karate\/Demo\/Test[1:3] 15:34:29.136-15:34:29.521 get call test"},{"id":2,"group":1,"content":"Karate\/Demo\/Test[2:9]","start":1742978069526,"end":1742978069677,"title":"Karate\/Demo\/Test[2:9] 15:34:29.526-15:34:29.677 get call test"},{"id":3,"group":1,"content":"Karate\/Demo\/Test[3:15]","start":1742978069681,"end":1742978070180,"title":"Karate\/Demo\/Test[3:15] 15:34:29.681-15:34:30.180 get call test"},{"id":4,"group":1,"content":"Karate\/Demo\/Test[4:21]","start":1742978070183,"end":1742978078584,"title":"Karate\/Demo\/Test[4:21] 15:34:30.183-15:34:38.584 Successful Login"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
