@@ -23,6 +23,7 @@ public class TestRunner {
                 .parallel(2);
 
         generateReport(results.getReportDir());
+        System.out.println("Report Directory: " + results.getReportDir());
     }
 
     public static void generateReport(String karateOutputPath) {
