@@ -19,7 +19,9 @@ Scenario: get call test
 
 
 Scenario: Successful Login
+    * configure driver = { type: 'chrome' }
     Given driver 'https://demowebshop.tricentis.com/login'
+    
     And input('#Email', 'nashtechhoang@gmail.com')
     And input('#Password', '123321456')
     When click('.button-1.login-button')
